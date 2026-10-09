@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="WarriorGameThing/WarriorGameThing.vcxproj" Id="e99d1c32-d2af-4aea-bcc9-b2d8b3431993" />
+</Solution>
