@@ -1,19 +1,11 @@
 // WarriorGameThing.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include<algorithm>
 #include"Character.h"
+#include"Game.h"
 
-using namespace std; 
-
-int main()
+void beforeMakingGameClassToHandleAllLogic()
 {
-
-
-	//using integer = int; 
-
-	//integer a = 123; 
-
 	Armor basicArmor("Basic Armor", 10);
 	Weapon basicWeapon("Basic Weapon", 20, 1);
 
@@ -26,14 +18,26 @@ int main()
 	mainCharacter.attack(enemy1);
 	enemy1.attack(mainCharacter);
 
+	Character clonedCharacter = mainCharacter.clone(mainCharacter);
+	mainCharacter.printStats();
 
-	//Enemy realEnemy()
 	Enemy realEnemy("Real Enemy Class", 100, 20, 5, 5);
-
 	Enemy otherEnemy(enemy1); 
 
-	//realEnemy.printStats();
-	//realEnemy.attack(mainCharacter);
+	realEnemy.printStats();
+	realEnemy.attack(mainCharacter);
 
-	//realEnemy.cakeDestruct();
+	realEnemy.shapeShift("Cat");
+	realEnemy.attack(mainCharacter);
+
+	realEnemy.castSpell("Fireball", mainCharacter);
+
+	realEnemy.cakeDestruct();
+	
+}
+
+int main()
+{
+	Game game;
+	game.startGame();
 }
